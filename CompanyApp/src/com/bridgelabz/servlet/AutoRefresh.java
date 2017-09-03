@@ -24,9 +24,12 @@ public class AutoRefresh extends HttpServlet {
 			am_pm = "AM";
 		else
 			am_pm = "PM";
-		String htmlRes = "<html>" + " <body>" + "<h1> Welcome to Bridgelabz </h1>" + " <h2>" + " Current Time is : "
-				+ " <font color =\"green\"> " + hour + ":" + minute + ":" + second + " " + am_pm + " </font>"
-				+ " </h2> " + " </body> " + " </html> ";
+		String htmlRes = "<html>" + " <body>" +"<center>"+
+			
+				
+				"<h1> Welcome to Bridgelabz </h1>" + " <h2>" + " Current Time is : "
+				+ " <font color =\"red\"> " + hour + ":" + minute + ":" + second + " " + am_pm + " </font>"
+				+ " </h2> " +"</center>"+ " </body> " + " </html> ";
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
 		out.print(htmlRes);

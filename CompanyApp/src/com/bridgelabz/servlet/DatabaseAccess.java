@@ -6,14 +6,17 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Driver;
-import com.mysql.jdbc.Statement;
+
 
 public class DatabaseAccess extends HttpServlet {
 	@Override
@@ -27,12 +30,9 @@ public class DatabaseAccess extends HttpServlet {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			//Class.forName("com.mysql.jdbc.Driver");
-			Driver driver = new Driver();
-			DriverManager.registerDriver(driver);
-			System.out.println("hello");
+			Class.forName("com.mysql.jdbc.Driver");
 			String dburl = "jdbc:mysql://localhost:3306/companyApp?user=root&password=password";
-			con = (Connection) DriverManager.getConnection(dburl);
+			con =  DriverManager.getConnection(dburl);
 			String query = "select * from company";
 			stmt = (Statement) con.createStatement();
 			rs = stmt.executeQuery(query);
@@ -44,7 +44,7 @@ public class DatabaseAccess extends HttpServlet {
 				out.println("First name : " + fName + "<br>");
 				out.println("Last name : " + lName);
 			}
-		} catch (SQLException  e) {
+		} catch (SQLException | ClassNotFoundException  e) {
 			e.printStackTrace();
 		} finally {
 			try {

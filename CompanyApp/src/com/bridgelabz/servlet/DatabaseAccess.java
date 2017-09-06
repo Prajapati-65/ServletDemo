@@ -1,14 +1,11 @@
 package com.bridgelabz.servlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -16,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.mysql.jdbc.Driver;
 
 public class DatabaseAccess extends HttpServlet {
 	@Override
@@ -30,21 +27,23 @@ public class DatabaseAccess extends HttpServlet {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			
+			Driver driver = new Driver();
+			DriverManager.registerDriver(driver);
 			String dburl = "jdbc:mysql://localhost:3306/companyApp?user=root&password=password";
 			con =  DriverManager.getConnection(dburl);
 			String query = "select * from company";
-			stmt = (Statement) con.createStatement();
+			stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
 			while (rs.next()) {
 				int regNo = rs.getInt("regno");
 				String fName = rs.getString("firstname");
 				String lName = rs.getString("lastname");
-				out.println("Reg.No : " + regNo + "<br>");
-				out.println("First name : " + fName + "<br>");
-				out.println("Last name : " + lName);
+				System.out.println("Reg.No : " + regNo + "<br>");
+				System.out.println("First name : " + fName + "<br>");
+				System.out.println("Last name : " + lName);
 			}
-		} catch (SQLException | ClassNotFoundException  e) {
+		} catch (SQLException  e) {
 			e.printStackTrace();
 		} finally {
 			try {

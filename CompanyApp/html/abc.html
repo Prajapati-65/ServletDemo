@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Revervation Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #eee;
+        }
+
+        *[role="form"] {
+            padding: 15px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 0.3em;
+        }
+
+        *[role="form"] h2 {
+            margin-left: 5em;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form-horizontal" role="form">
+            <div class="well" style="background-color:skyblue" ;>My Revervation Form</div>
+
+            <div class="form-group">
+                <label for="contacts" class="col-sm-3 control-label">Accomodation</label>
+                <div class="col-sm-4">
+                    <select type="gender" placeholder="Gender" class="form-control">
+                            <option>RV</option>
+                            <option>RV</option>
+                            <option>RV</option>
+                            <option>RV</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">Name</label>
+                <div class="col-sm-3">
+                    <select type="gender" placeholder="Gender" class="form-control">
+                            <option value="mrs">Mrs</option>
+                            <option value="ms">Ms</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="fistName" placeholder="First Name" class="form-control">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="lastName" placeholder="Last Name" class="form-control">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">Guests</label>
+                <div class="col-sm-3">
+                    <input type="text" name="years" placeholder="18+ years" class="form-control">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="years" placeholder="2-17 years" class="form-control">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="years" placeholder="<2 years" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contacts" class="col-sm-3 control-label">Contacts</label>
+                <div class="col-sm-9">
+                    <input type="email" id="email" placeholder="E-mail" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"></label>
+                <div class="col-sm-9">
+                    <input type="text" id="text" placeholder="Phone: (xxx)-xxx xxxx" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">Equipment Type</label>
+                <div class="col-sm-3">
+                    <select type="text" class="form-control">
+                            <option value="TravelTrailer">Travel Trailer</option>
+                            <option value="TravelTrailer">Bag</option>
+                            <option value="TravelTrailer">Weatherproof Jacket</option>
+                            <option value="TravelTrailer">Hiking Shoes</option>
+                        </select>  
+                </div>
+
+                <label for="name" class="col-sm-3 control-label">Slide-outs</label>
+                <div class="col-sm-3">
+                        <div class="button">
+                                <label>
+                                  <input type="button" data-toggle="toggle">
+                                </label>
+                            </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                    <label for="contacts" class="col-sm-3 control-label">Requipment Service</label>
+                    <div class="col-sm-9">
+                        <input type="text" placeholder="Hydro Water Sewer">
+                    </div>
+
+    
+                </div>
+
+            <div class="form-group">
+                <label for="contacts" class="col-sm-3 control-label">Comments</label>
+                <div class="col-sm-3">
+                    <textarea name="message" row="20" cols="80" placeholder="addtional Comments"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary">Request Reservation</button>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+</body>
+
+</html>
